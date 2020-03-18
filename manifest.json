@@ -1,0 +1,33 @@
+{
+
+  "manifest_version": 2,
+  "name": "Facebook pause",
+  "version": "1.0",
+
+  "description": "Stop our habit of checking facebook",
+  "homepage_url": "https://github.com/ductri/fb_pause.git",
+
+  "permissions": [
+	"activeTab", "tabs"
+	],
+
+  "browser_action": {
+	"default_icon": "icons/block-24px.svg",
+	"default_title": "Facebook pause",
+	"default_popup": "popup/clock.html"
+  },
+
+  "icons": {
+    "48": "icons/block-24px.svg"
+  },
+  
+  "background": {
+     "scripts": ["background-script.js"]
+  },
+  
+  "content_scripts": [{
+	"matches": ["*://*.google.com/*"],
+	"js": ["content_scripts/clock.js"]
+  }]
+
+}
