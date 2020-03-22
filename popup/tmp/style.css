@@ -1,0 +1,407 @@
+body {
+  background-color: grey;
+}
+.timepicker {
+  width: 300px;
+  height: 450px;
+  background-color: white;
+  position: relative;
+  font-family: Calibri;
+}
+.timepicker .top {
+  background-color: #009788;
+  color: rgba(255, 255, 255, 0.7);
+  height: 100px;
+  line-height: 100px;
+  font-size: 50px;
+  text-align: center;
+}
+.timepicker .top .active {
+  color: white;
+}
+.timepicker .circle {
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 250px;
+  height: 250px;
+  border-radius: 1000px;
+  position: relative;
+  top: 25px;
+  left: 25px;
+  box-sizing: border-box;
+}
+.timepicker .circle .mid {
+  position: absolute;
+  left: calc(50% - 0px);
+  top: calc(50% - 0px);
+  width: 2px;
+  height: 2px;
+  border-radius: 10px;
+  background-color: black;
+}
+.timepicker .circle .hour {
+  position: absolute;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  text-align: center;
+}
+.timepicker .circle .hour.selected {
+  background-color: #009788;
+}
+.timepicker .circle .hour.selected::after {
+  content: '';
+}
+.timepicker .circle .hour::after {
+  z-index: -1;
+  background-color: #009788;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: 100% 0%;
+  top: 50%;
+  width: 101px;
+  right: 50%;
+}
+.timepicker .circle .hour:hover {
+  color: white;
+  z-index: 2;
+}
+.timepicker .circle .hour:hover::after {
+  content: '';
+}
+.timepicker .circle .hour:nth-child(12):after {
+  transform: rotate(330deg);
+}
+.timepicker .circle .hour:nth-child(11):after {
+  transform: rotate(300deg);
+}
+.timepicker .circle .hour:nth-child(10):after {
+  transform: rotate(270deg);
+}
+.timepicker .circle .hour:nth-child(9):after {
+  transform: rotate(240deg);
+}
+.timepicker .circle .hour:nth-child(8):after {
+  transform: rotate(210deg);
+}
+.timepicker .circle .hour:nth-child(7):after {
+  transform: rotate(180deg);
+}
+.timepicker .circle .hour:nth-child(6):after {
+  transform: rotate(150deg);
+}
+.timepicker .circle .hour:nth-child(5):after {
+  transform: rotate(120deg);
+}
+.timepicker .circle .hour:nth-child(4):after {
+  transform: rotate(90deg);
+}
+.timepicker .circle .hour:nth-child(3):after {
+  transform: rotate(60deg);
+}
+.timepicker .circle .hour:nth-child(2):after {
+  transform: rotate(30deg);
+}
+.timepicker .circle .hour:nth-child(1):after {
+  transform: rotate(0deg);
+}
+.timepicker .circle .hour2 {
+  z-index: 2;
+  position: absolute;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 14px;
+}
+.timepicker .circle .hour2:hover {
+  color: white;
+}
+.timepicker .circle .hour2:hover::after {
+  content: '';
+  background-color: #009788;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: 100% 0%;
+  top: 50%;
+  width: 64px;
+  right: 50%;
+  z-index: -1;
+}
+.timepicker .circle .hour2:nth-child(24):after {
+  transform: rotate(690deg);
+}
+.timepicker .circle .hour2:nth-child(23):after {
+  transform: rotate(660deg);
+}
+.timepicker .circle .hour2:nth-child(22):after {
+  transform: rotate(630deg);
+}
+.timepicker .circle .hour2:nth-child(21):after {
+  transform: rotate(600deg);
+}
+.timepicker .circle .hour2:nth-child(20):after {
+  transform: rotate(570deg);
+}
+.timepicker .circle .hour2:nth-child(19):after {
+  transform: rotate(540deg);
+}
+.timepicker .circle .hour2:nth-child(18):after {
+  transform: rotate(510deg);
+}
+.timepicker .circle .hour2:nth-child(17):after {
+  transform: rotate(480deg);
+}
+.timepicker .circle .hour2:nth-child(16):after {
+  transform: rotate(450deg);
+}
+.timepicker .circle .hour2:nth-child(15):after {
+  transform: rotate(420deg);
+}
+.timepicker .circle .hour2:nth-child(14):after {
+  transform: rotate(390deg);
+}
+.timepicker .circle .hour2:nth-child(13):after {
+  transform: rotate(360deg);
+}
+.timepicker .circle .hour:hover,
+.timepicker .circle .hour2:hover {
+  background-color: #009788;
+}
+.timepicker .circle .min {
+  position: absolute;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+.timepicker .circle .min:hover {
+  background-color: #009788;
+}
+.timepicker .circle .min:hover::after {
+  content: '';
+  background-color: #009788;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: 100% 0%;
+  top: 50%;
+  width: 101px;
+  right: 50%;
+}
+.timepicker .circle .min:nth-child(60):after {
+  transform: rotate(354deg);
+}
+.timepicker .circle .min:nth-child(59):after {
+  transform: rotate(348deg);
+}
+.timepicker .circle .min:nth-child(58):after {
+  transform: rotate(342deg);
+}
+.timepicker .circle .min:nth-child(57):after {
+  transform: rotate(336deg);
+}
+.timepicker .circle .min:nth-child(56):after {
+  transform: rotate(330deg);
+}
+.timepicker .circle .min:nth-child(55):after {
+  transform: rotate(324deg);
+}
+.timepicker .circle .min:nth-child(54):after {
+  transform: rotate(318deg);
+}
+.timepicker .circle .min:nth-child(53):after {
+  transform: rotate(312deg);
+}
+.timepicker .circle .min:nth-child(52):after {
+  transform: rotate(306deg);
+}
+.timepicker .circle .min:nth-child(51):after {
+  transform: rotate(300deg);
+}
+.timepicker .circle .min:nth-child(50):after {
+  transform: rotate(294deg);
+}
+.timepicker .circle .min:nth-child(49):after {
+  transform: rotate(288deg);
+}
+.timepicker .circle .min:nth-child(48):after {
+  transform: rotate(282deg);
+}
+.timepicker .circle .min:nth-child(47):after {
+  transform: rotate(276deg);
+}
+.timepicker .circle .min:nth-child(46):after {
+  transform: rotate(270deg);
+}
+.timepicker .circle .min:nth-child(45):after {
+  transform: rotate(264deg);
+}
+.timepicker .circle .min:nth-child(44):after {
+  transform: rotate(258deg);
+}
+.timepicker .circle .min:nth-child(43):after {
+  transform: rotate(252deg);
+}
+.timepicker .circle .min:nth-child(42):after {
+  transform: rotate(246deg);
+}
+.timepicker .circle .min:nth-child(41):after {
+  transform: rotate(240deg);
+}
+.timepicker .circle .min:nth-child(40):after {
+  transform: rotate(234deg);
+}
+.timepicker .circle .min:nth-child(39):after {
+  transform: rotate(228deg);
+}
+.timepicker .circle .min:nth-child(38):after {
+  transform: rotate(222deg);
+}
+.timepicker .circle .min:nth-child(37):after {
+  transform: rotate(216deg);
+}
+.timepicker .circle .min:nth-child(36):after {
+  transform: rotate(210deg);
+}
+.timepicker .circle .min:nth-child(35):after {
+  transform: rotate(204deg);
+}
+.timepicker .circle .min:nth-child(34):after {
+  transform: rotate(198deg);
+}
+.timepicker .circle .min:nth-child(33):after {
+  transform: rotate(192deg);
+}
+.timepicker .circle .min:nth-child(32):after {
+  transform: rotate(186deg);
+}
+.timepicker .circle .min:nth-child(31):after {
+  transform: rotate(180deg);
+}
+.timepicker .circle .min:nth-child(30):after {
+  transform: rotate(174deg);
+}
+.timepicker .circle .min:nth-child(29):after {
+  transform: rotate(168deg);
+}
+.timepicker .circle .min:nth-child(28):after {
+  transform: rotate(162deg);
+}
+.timepicker .circle .min:nth-child(27):after {
+  transform: rotate(156deg);
+}
+.timepicker .circle .min:nth-child(26):after {
+  transform: rotate(150deg);
+}
+.timepicker .circle .min:nth-child(25):after {
+  transform: rotate(144deg);
+}
+.timepicker .circle .min:nth-child(24):after {
+  transform: rotate(138deg);
+}
+.timepicker .circle .min:nth-child(23):after {
+  transform: rotate(132deg);
+}
+.timepicker .circle .min:nth-child(22):after {
+  transform: rotate(126deg);
+}
+.timepicker .circle .min:nth-child(21):after {
+  transform: rotate(120deg);
+}
+.timepicker .circle .min:nth-child(20):after {
+  transform: rotate(114deg);
+}
+.timepicker .circle .min:nth-child(19):after {
+  transform: rotate(108deg);
+}
+.timepicker .circle .min:nth-child(18):after {
+  transform: rotate(102deg);
+}
+.timepicker .circle .min:nth-child(17):after {
+  transform: rotate(96deg);
+}
+.timepicker .circle .min:nth-child(16):after {
+  transform: rotate(90deg);
+}
+.timepicker .circle .min:nth-child(15):after {
+  transform: rotate(84deg);
+}
+.timepicker .circle .min:nth-child(14):after {
+  transform: rotate(78deg);
+}
+.timepicker .circle .min:nth-child(13):after {
+  transform: rotate(72deg);
+}
+.timepicker .circle .min:nth-child(12):after {
+  transform: rotate(66deg);
+}
+.timepicker .circle .min:nth-child(11):after {
+  transform: rotate(60deg);
+}
+.timepicker .circle .min:nth-child(10):after {
+  transform: rotate(54deg);
+}
+.timepicker .circle .min:nth-child(9):after {
+  transform: rotate(48deg);
+}
+.timepicker .circle .min:nth-child(8):after {
+  transform: rotate(42deg);
+}
+.timepicker .circle .min:nth-child(7):after {
+  transform: rotate(36deg);
+}
+.timepicker .circle .min:nth-child(6):after {
+  transform: rotate(30deg);
+}
+.timepicker .circle .min:nth-child(5):after {
+  transform: rotate(24deg);
+}
+.timepicker .circle .min:nth-child(4):after {
+  transform: rotate(18deg);
+}
+.timepicker .circle .min:nth-child(3):after {
+  transform: rotate(12deg);
+}
+.timepicker .circle .min:nth-child(2):after {
+  transform: rotate(6deg);
+}
+.timepicker .circle .min:nth-child(1):after {
+  transform: rotate(0deg);
+}
+.timepicker .actions {
+  color: #009788;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 10px;
+}
+.timepicker .actions .action {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  height: 37.5px;
+  line-height: 37.5px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.timepicker .actions .action:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.timepicker .actions .action:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}

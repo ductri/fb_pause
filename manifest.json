@@ -8,13 +8,14 @@
   "homepage_url": "https://github.com/ductri/fb_pause.git",
 
   "permissions": [
-	"activeTab", "tabs"
+	"activeTab", "tabs", "webRequest", "https://api.quotable.io/random"
 	],
 
   "browser_action": {
 	"default_icon": "icons/block-24px.svg",
 	"default_title": "Facebook pause",
-	"default_popup": "popup/clock.html"
+	"default_popup": "popup/countdown/clock.html",
+    "browser_style": true
   },
 
   "icons": {
@@ -26,8 +27,11 @@
   },
   
   "content_scripts": [{
-	"matches": ["*://*.google.com/*"],
-	"js": ["content_scripts/clock.js"]
-  }]
+	"matches": ["*://www.facebook.com/*"],
+	"js": ["content_scripts/clock.js"],
+	"run_at": "document_start"
+  }],
+
+  "web_accessible_resources": ["content_scripts/cards/style.css"]
 
 }

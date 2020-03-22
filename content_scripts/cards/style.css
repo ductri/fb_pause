@@ -1,0 +1,14 @@
+@charset "UTF-8";
+body {
+  background: #eee;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: auto;
+    width: 600px;
+    height: 200px;
+    padding-top: 200px;
+    font-size: 12pt;
+}
+
+#author {
+font-style: italic;
+}
