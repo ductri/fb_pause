@@ -1,7 +1,7 @@
 {
 
   "manifest_version": 2,
-  "name": "Facebook pause",
+  "name": "Facebook off (F******k off)",
   "version": "1.0",
 
   "description": "Stop our habit of checking facebook",
@@ -12,14 +12,14 @@
 	],
 
   "browser_action": {
-	"default_icon": "icons/block-24px.svg",
-	"default_title": "Facebook pause",
+	"default_icon": "icons/icon-48.png",
+	"default_title": "Facebook off (F******k off)",
 	"default_popup": "popup/countdown/clock.html",
     "browser_style": true
   },
 
   "icons": {
-    "48": "icons/block-24px.svg"
+    "48": "icons/icon-48.png"
   },
   
   "background": {
@@ -33,5 +33,4 @@
   }],
 
   "web_accessible_resources": ["content_scripts/cards/style.css"]
-
 }
